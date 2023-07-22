@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *next = NULL;
 	listint_t *head = NULL;
 
-	if (!list && !(*list))
+	if (!list || !(*list) || !((*list)->next))
 		return;
 	head = *list;
 	current = head;
@@ -35,7 +35,7 @@ void reverse_swap(listint_t **list, listint_t *head)
 	listint_t *prev = NULL;
 	listint_t *current = NULL;
 
-	if (!head || !(head->next))
+	if (!list || !(*list) || !head)
 		return;
 	while (head->prev)
 	{
