@@ -35,7 +35,7 @@ void reverse_swap(listint_t **list, listint_t *head)
 	listint_t *prev = NULL;
 	listint_t *current = NULL;
 
-	if (!head)
+	if (!head || !(head->next))
 		return;
 	while (head->prev)
 	{
