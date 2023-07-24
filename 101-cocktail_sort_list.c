@@ -30,6 +30,7 @@ void sort_forward(listint_t *start, listint_t *stop, listint_t **list)
 	listint_t *next = NULL;
 	int swapped = 0;
 
+	puts("sort forward called");
 	if (!list || !start || start == stop)
 		return;
 
@@ -41,8 +42,8 @@ void sort_forward(listint_t *start, listint_t *stop, listint_t **list)
 		{
 			swap_list(iter, next);
 			swapped++;
-			if (iter->prev == NULL)
-				*list = iter;
+			if (next->prev == NULL)
+				*list = next;
 			print_list(*list);
 		}
 		else
@@ -68,6 +69,7 @@ void sort_reversed(listint_t *start, listint_t *stop, listint_t **list)
 	listint_t *prev = NULL;
 	int swapped = 0;
 
+	puts("sort reversed called");
 	if (!list || !start || start == stop)
 		return;
 
@@ -116,8 +118,8 @@ void cocktail_sort_list(listint_t **list)
 		{
 			swap_list(iter, next);
 			swapped++;
-			if (iter->prev == NULL)
-				*list = iter;
+			if (next->prev == NULL)
+				*list = next;
 			print_list(*list);
 		}
 		else
