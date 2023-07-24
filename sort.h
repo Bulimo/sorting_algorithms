@@ -32,5 +32,8 @@ void swap(listint_t **list, listint_t *node);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+void sift_down(int *array, size_t size, size_t idx, size_t orig_size);
+void heap_sort(int *array, size_t size);
+void swap_heap(int *a, int *b);
 
 #endif
