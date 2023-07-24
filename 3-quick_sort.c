@@ -5,7 +5,7 @@
  * @a: first integer
  * @b: second integer
  */
-void swap(int *a, int *b)
+void swap_array(int *a, int *b)
 {
 	int temp = 0;
 
@@ -33,7 +33,7 @@ size_t partition(int *array, size_t low, size_t high, size_t size)
 		{
 			if (i != j)
 			{
-				swap(&array[i], &array[j]);
+				swap_array(&array[i], &array[j]);
 				print_array(array, size);
 			}
 			j++;
@@ -41,7 +41,7 @@ size_t partition(int *array, size_t low, size_t high, size_t size)
 	}
 	if (j != high)
 	{
-		swap(&array[j], &array[high]);
+		swap_array(&array[j], &array[high]);
 		print_array(array, size);
 	}
 	return (j);

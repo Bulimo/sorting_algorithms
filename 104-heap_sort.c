@@ -1,13 +1,13 @@
 #include "sort.h"
 
 /**
- * swap_heap - Swaps two integers
- * @a: Pointer to the first integer
- * @b: Pointer to the second integer
+ * swap - swap two integers
+ * @a: first integer
+ * @b: second integer
  */
-void swap_heap(int *a, int *b)
+void swap_array(int *a, int *b)
 {
-	int temp;
+	int temp = 0;
 
 	temp = *a;
 	*a = *b;
@@ -35,7 +35,7 @@ void sift_down(int *array, size_t size, size_t idx, size_t orig_size)
 
 	if (largest != idx)
 	{
-		swap_heap(&array[idx], &array[largest]);
+		swap_array(&array[idx], &array[largest]);
 		print_array(array, orig_size);
 		sift_down(array, size, largest, orig_size);
 	}
@@ -58,7 +58,7 @@ void heap_sort(int *array, size_t size)
 
 	for (i = size - 1; i > 0; i--)
 	{
-		swap_heap(&array[0], &array[i]);
+		swap_array(&array[0], &array[i]);
 		print_array(array, size);
 		sift_down(array, i, 0, size);
 	}
