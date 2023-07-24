@@ -4,57 +4,52 @@
  * swap_list - swaps two doubly linked list nodes
  * @current: first node
  * @next: second node
-*/
+ */
 void swap_list(listint_t *current, listint_t *next)
 {
 	current->next = next->next;
-	if (next->next)
+	if (next->next != NULL)
 		next->next->prev = current;
 	next->next = current;
 	next->prev = current->prev;
-	if (current->prev)
+	if (current->prev != NULL)
 		current->prev->next = next;
 	current->prev = next;
 }
-
 
 /**
  * sort_forward - bubble sort the list in forward direction
  * @start: the node to start at
  * @stop: the node to stop sorting
  * @list: address of the pointer to first node
-*/
+ */
 void sort_forward(listint_t *start, listint_t *stop, listint_t **list)
 {
 	listint_t *iter = NULL;
 	listint_t *next = NULL;
 	int swapped = 0;
 
-	puts("sort forward called");
 	if (!list || !start || start == stop)
 		return;
 
 	iter = start;
-	while (iter->next && (iter != stop))
+	while (iter->next && iter != stop)
 	{
 		next = iter->next;
 		if (iter->n > next->n)
 		{
 			swap_list(iter, next);
 			swapped++;
-			if (next->prev == NULL)
-				*list = next;
+			if (iter->prev == NULL)
+				*list = iter;
 			print_list(*list);
 		}
 		else
 			iter = iter->next;
 	}
-	if (iter == NULL)
-		iter = iter->prev;
+
 	if (swapped)
 		sort_reversed(iter, start, list);
-	else
-		return;
 }
 
 /**
@@ -62,19 +57,18 @@ void sort_forward(listint_t *start, listint_t *stop, listint_t **list)
  * @start: the node to start at
  * @stop: the node to stop sorting
  * @list: address of the pointer to first node
-*/
+ */
 void sort_reversed(listint_t *start, listint_t *stop, listint_t **list)
 {
 	listint_t *iter = NULL;
 	listint_t *prev = NULL;
 	int swapped = 0;
 
-	puts("sort reversed called");
 	if (!list || !start || start == stop)
 		return;
 
 	iter = start;
-	while (iter->prev && (iter != stop))
+	while (iter->prev && iter != stop)
 	{
 		prev = iter->prev;
 		if (iter->n < prev->n)
@@ -88,18 +82,15 @@ void sort_reversed(listint_t *start, listint_t *stop, listint_t **list)
 		else
 			iter = iter->prev;
 	}
-	if (iter == stop)
-		iter = iter->next;
+
 	if (swapped)
 		sort_forward(iter, start, list);
-	else
-		return;
 }
 
 /**
  * cocktail_sort_list - sorts a list using the Cocktail Shaker sort
  * @list: pointer to pointer to the first node
-*/
+ */
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *iter = NULL;
@@ -111,24 +102,21 @@ void cocktail_sort_list(listint_t **list)
 		return;
 
 	iter = *list;
-	while (iter->next && (iter != stop))
+	while (iter->next && iter != stop)
 	{
 		next = iter->next;
 		if (iter->n > next->n)
 		{
 			swap_list(iter, next);
 			swapped++;
-			if (next->prev == NULL)
-				*list = next;
+			if (iter->prev == NULL)
+				*list = iter;
 			print_list(*list);
 		}
 		else
 			iter = iter->next;
 	}
-	if (iter == NULL)
-		iter = iter->prev;
+
 	if (swapped)
 		sort_reversed(iter, *list, list);
-	else
-		return;
 }
