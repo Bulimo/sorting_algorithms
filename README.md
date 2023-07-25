@@ -47,6 +47,16 @@
     . 2-O - the big O notations of the time complexity of the Selection sort algorithm
     . 3-quick_sort.c - function that sorts an array of integers in ascending order using the Quick sort algorithm
     . 3-O - the big O notations of the time complexity of the Quick sort algorithm
+    . 100-shell_sort.c - function that sorts an array of integers in ascending order using the Shell sort algorithm
+    . 101-cocktail_sort_list.c - function that sorts a doubly linked list of integers in ascending order using the Cocktail shaker sort algorithm
+    . 101-O - he big O notations of the time complexity of the Cocktail shaker sort algorithm
+    . 102-counting_sort.c - function that sorts an array of integers in ascending order using the Counting sort algorithm
+    . 102-O - the big O notations of the time complexity of the Counting sort algorithm
+    . 103-merge_sort.c - function that sorts an array of integers in ascending order using the Merge sort algorithm
+    . 103-O - the big O notations of the time complexity of the Merge sort algorithm
+    . 104-heap_sort.c - function that sorts an array of integers in ascending order using the Heap sort algorithm
+    . 104-O - the big O notations of the time complexity of the Heap sort algorithm
+    . 105-radix_sort.c - function that sorts an array of integers in ascending order using the Radix sort algorithm
 
 ## Authors
 
