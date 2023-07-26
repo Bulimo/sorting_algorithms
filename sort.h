@@ -43,5 +43,6 @@ void swap_bitonic(int arr[], int item1, int item2, int order);
 void merge(int arr[], int low, int nelemnt, int order);
 void bitonicsort(int arr[], int low, int nelemnt, int order, int size);
 void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
 #endif
