@@ -39,5 +39,9 @@ void merge_sort(int *array, size_t size);
 void mergeSort(int *array, int *b_array, size_t start, size_t stop);
 void print_merge(int *array, size_t start, size_t stop);
 void radix_sort(int *array, size_t size);
+void swap_bitonic(int arr[], int item1, int item2, int order);
+void merge(int arr[], int low, int nelemnt, int order);
+void bitonicsort(int arr[], int low, int nelemnt, int order, int size);
+void bitonic_sort(int *array, size_t size);
 
 #endif
